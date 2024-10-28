@@ -3,8 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff; /* Set text color to white for contrast */
-    background-color: rgb(21, 21, 67); /* Set uniform background color */
+    color: #fff;
+    background-color: rgb(21, 21, 67);
 }
 
 /* Logo Positioning */
@@ -16,8 +16,15 @@ body {
 }
 
 .logo img {
-    width: 130px; /* Adjust size as necessary */
+    width: 130px;
     height: auto;
+}
+
+/* Responsive logo for smaller screens */
+@media (max-width: 600px) {
+    .logo img {
+        width: 90px;
+    }
 }
 
 /* Header */
@@ -38,14 +45,14 @@ header {
 
 .banner img {
     width: 100%;
-    height: 92%; /* Crops approximately 8% from the bottom */
+    height: 100%;
     object-fit: cover;
-    object-position: top; /* Aligns image to the top */
-    transition: transform 0.3s; /* Add transition for hover effect */
+    object-position: top;
+    transition: transform 0.3s;
 }
 
 .banner:hover img {
-    transform: scale(1.05); /* Scale the image on hover */
+    transform: scale(1.05);
 }
 
 .banner h1 {
@@ -58,11 +65,34 @@ header {
     text-align: center;
     text-shadow: rgb(21, 21, 67);
     margin: 0;
-    transition: color 0.3s; /* Add transition for text color change */
+    transition: color 0.3s;
 }
 
 .banner:hover h1 {
-    color: goldenrod; /* Change text color on hover */
+    color: goldenrod;
+}
+
+/* Responsive banner for smaller screens */
+@media (max-width: 768px) {
+    .banner {
+        height: 60vh;
+    }
+    .banner h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 50vh;
+    }
+    .banner img {
+        height: 100%; /* Ensure image height matches container */
+    }
+    .banner h1 {
+        font-size: 1.5em;
+        padding: 0 10px;
+    }
 }
 
 /* Carousel Section */
@@ -81,11 +111,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Space between items */
+    gap: 20px;
 }
 
 .carousel-item {
-    flex: 0 0 30%; /* Each item takes 30% of the row for 3 items per row */
+    flex: 0 0 30%;
     max-width: 200px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -94,7 +124,7 @@ header {
 .carousel-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 1; /* Ensures images have a square ratio */
+    aspect-ratio: 1;
     border-radius: 8px;
     transition: transform 0.3s;
 }
@@ -145,7 +175,7 @@ footer {
 
     /* Logo Responsiveness */
     .logo img {
-        width: 100px; /* Adjusts size on smaller screens */
+        width: 100px;
         height: auto;
     }
 
@@ -159,7 +189,7 @@ footer {
     }
 
     .carousel-container {
-        padding: 10px; /* Add padding to prevent content touching edges */
+        padding: 10px;
     }
 }
 
@@ -170,7 +200,7 @@ footer {
 
     /* Logo Responsiveness for Mobile */
     .logo img {
-        width: 80px; /* Further reduce size for mobile screens */
+        width: 80px;
     }
 
     .explore-btn {
@@ -180,17 +210,18 @@ footer {
 
     .carousel-item {
         flex: 0 0 100%; /* One item per row on small screens */
+        max-width: 100%; /* Ensure it fills the screen width */
+    }
+
+    .carousel-container {
+        flex-direction: column; /* Stack images vertically */
+        padding: 5px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .banner h1 {
         font-size: 2em;
         padding: 0 8px;
-    }
-
-    .carousel-container {
-        padding: 5px; /* Smaller padding for very small screens */
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
     }
 }
