@@ -1,0 +1,196 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Set text color to white for contrast */
+    background-color: rgb(21, 21, 67); /* Set uniform background color */
+}
+
+/* Logo Positioning */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.logo img {
+    width: 130px; /* Adjust size as necessary */
+    height: auto;
+}
+
+/* Header */
+header {
+    background-color: rgb(21, 21, 67);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Banner Styling */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 92%; /* Crops approximately 8% from the bottom */
+    object-fit: cover;
+    object-position: top; /* Aligns image to the top */
+    transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.banner:hover img {
+    transform: scale(1.05); /* Scale the image on hover */
+}
+
+.banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: rgb(21, 21, 67);
+    margin: 0;
+    transition: color 0.3s; /* Add transition for text color change */
+}
+
+.banner:hover h1 {
+    color: goldenrod; /* Change text color on hover */
+}
+
+/* Carousel Section */
+.carousel {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(21, 21, 67);
+}
+
+.carousel h2 {
+    color: goldenrod;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+}
+
+.carousel-item {
+    flex: 0 0 30%; /* Each item takes 30% of the row for 3 items per row */
+    max-width: 200px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1; /* Ensures images have a square ratio */
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+/* Hover Effects */
+.carousel-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px goldenrod;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Explore Button */
+.links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.explore-btn {
+    background-color: goldenrod;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: goldenrod;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(21, 21, 67);
+    color: goldenrod;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Design for Tablets and Phones */
+@media (max-width: 768px) {
+    header, footer {
+        font-size: 1em;
+    }
+
+    /* Logo Responsiveness */
+    .logo img {
+        width: 100px; /* Adjusts size on smaller screens */
+        height: auto;
+    }
+
+    .banner h1 {
+        font-size: 2.5em;
+        padding: 10px;
+    }
+
+    .carousel-item {
+        flex: 0 0 45%; /* Two items per row on tablets */
+    }
+
+    .carousel-container {
+        padding: 10px; /* Add padding to prevent content touching edges */
+    }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        font-size: 0.9em;
+    }
+
+    /* Logo Responsiveness for Mobile */
+    .logo img {
+        width: 80px; /* Further reduce size for mobile screens */
+    }
+
+    .explore-btn {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%; /* One item per row on small screens */
+    }
+
+    .banner h1 {
+        font-size: 2em;
+        padding: 0 8px;
+    }
+
+    .carousel-container {
+        padding: 5px; /* Smaller padding for very small screens */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
